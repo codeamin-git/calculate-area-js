@@ -18,8 +18,8 @@
       <!-- main content container -->
       <div class="flex gap-4 flex-col md:flex-row">
         <!-- shape card container -->
-        <div class="flex-1 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
-          <!-- triangle container -->
+        <div class="gap-4 grid grid-cols-1 md:grid-cols-1 lg:grid-cols-3">
+          <!-- triangle card -->
           <div>
             <div class="card card-compact w-96 bg-base-100 shadow-xl">
               <figure><img src="images/triangle.png" alt="Shoes" /></figure>
@@ -41,7 +41,7 @@
                   <span class="mr-4 ml-2">cm</span>
                 </div>
                 <div>
-                    <p class="text-2xl">Area: <span id="triangle-area"></span> <span>cm<sup>2</sup></span></p>
+                    <p class="text-2xl">Area: <span id="triangle-area">0</span> <span>cm<sup>2</sup></span></p>
                 </div>
 
                 <div class="card-actions justify-end">
@@ -50,31 +50,76 @@
               </div>
             </div>
           </div>
-          <!-- shape rectangle container -->
+          <!-- rectangle card -->
           <div class="card w-96 bg-base-100 shadow-xl">
             <figure><img src="images/rectangle.png" alt="Shoes" /></figure>
             <div class="card-body">
               <h2 class="card-title">Rectangle</h2>
-              <p>Area = w x l</p>
+              <p>Area = l X w</p>
               <div class="flex">
-                <!-- rectangle width -->
-                <input class="w-24 text-2xl p-2 rounded-sm bg-[#F1F1F1]" type="text" placeholder="w"> <span class="mr-4 ml-2 mt-2">cm</span>
                 <!-- rectangle length -->
-                <input class="w-24 text-2xl p-2 rounded-sm bg-[#F1F1F1]" type="text" placeholder="l"> <span class="mr-4 ml-2 mt-2">cm</span>
+                <input id="rect-length" class="w-24 text-2xl p-2 rounded-sm bg-[#F1F1F1]" type="text" placeholder="l"> <span class="mr-4 ml-2 mt-2">cm</span>
+                <!-- rectangle width -->
+                <input id="rect-width" class="w-24 text-2xl p-2 rounded-sm bg-[#F1F1F1]" type="text" placeholder="w"> <span class="mr-4 ml-2 mt-2">cm</span>
+              </div>
+              <div>
+                <p class="text-2xl">Area: <span id="rect-area">0</span>
+                <span>cm<sup>2</sup></span>
+              </p>
               </div>
               <div class="card-actions justify-end">
                 <button onclick="calculateRectangleArea()" class="w-full btn btn-primary">Calculate</button>
               </div>
             </div>
           </div>
+          <!-- parallelogram card -->
+          <div class="card w-96 bg-base-100 shadow-xl">
+            <figure><img src="images/parallelogram.png" alt="Shoes" /></figure>
+            <div class="card-body">
+              <h2 class="card-title">parallelogram</h2>
+              <p>Area = b X h</p>
+              <div>
+                <!-- parallelogram base -->
+                <input id="parallelogram-base" class="w-24 text-2xl p-2 rounded-sm bg-[#F1F1F1]" type="text" placeholder="base"> <span class="mr-4 ml-2 mt-2">cm</span>
+                <!-- parallelogram height -->
+                <input id="parallelogram-height" class="w-24 text-2xl p-2 rounded-sm bg-[#F1F1F1]" type="text" placeholder="height"> <span class="mr-4 ml-2 mt-2">cm</span>
+              </div>
+              <div>
+                <p class="text-2xl">Area: <span id="parallelogram-area">0</span><span>cm<sup>2</sup></span></p>
+              </div>
+              <div class="card-actions justify-end">
+                <button onclick="calculateParallelogramArea()" class="w-full btn btn-primary">Calculate</button>
+              </div>
+            </div>
+          </div>
+          <!-- pentagon card -->
+          <div class="card w-96 bg-base-100 shadow-xl">
+            <figure><img src="images/pentagon.png" alt="Shoes" /></figure>
+            <div class="card-body">
+              <h2 class="card-title">Pentagon</h2>
+              <p>Area: 0.5 X p X b</p>
+              <div class="flex gap-5">
+                <input id="pentagon-perimeter" class="w-24 text-2xl p-2 rounded-sm bg-[#F1F1F1]" type="text" placeholder="perimeter"><span>cm</span>
+                <input id="pentagon-base" class="w-24 text-2xl p-2 rounded-sm bg-[#F1F1F1]" type="text" placeholder="base"><span>cm</span>
+              </div>
+              <div>
+                <p class="text-2xl">Area: <span id="pentagon-area">0</span><span>cm<sup>2</sup></span></p>
+              </div>
+              <div class="card-actions justify-end">
+                <button onclick="calculatePentagonArea()" class="w-full btn btn-primary">Calculate</button>
+              </div>
+            </div>
+          </div>
         </div>
         <!-- area calculation container -->
-        <div class="w-96 border-2 border-gray-700 rounded-md">
+        <div class="w-1/2 lg:w-96 border-2 border-gray-700 rounded-md">
           <h3 class="text-3xl text-center p-4">Area calculation</h3>
         </div>
       </div>
     </main>
     <!-- script links -->
+    <script src="scripts/pentagon-area.js"></script>
+    <script src="scripts/parallelogram-area.js"></script>
     <script src="scripts/rectangle-area.js"></script>
     <script src="scripts/triangle-calculate.js"></script>
   </body>
